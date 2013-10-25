@@ -1,0 +1,13 @@
+<table class="table">
+  <tbody>
+    <%  BusinessModel.all.each do |bu| %>
+      <tr>
+        <td><%= bu.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script type="text/javascript">
+  $("#au_type").click(function(){
+});
+</script>

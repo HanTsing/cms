@@ -1,0 +1,50 @@
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="new_text02">
+    <p class="short01">
+      <%= f.label :name, :class => 'control-label' %>：
+      <%= f.text_field :name, :class => 'user01' %>
+    </p><br />
+
+    <% if action_name == 'create' %>
+        <%= f.label :password, :class => 'control-label' %>
+        <%= f.password_field :password, :class => 'user01' %>
+
+        <%= f.label :password_confirmation, :class => 'control-label' %>
+        <%= f.password_field :password_confirmation, :class => 'user01' %>
+    <% end %>
+
+    <p class="short02">
+      <%= f.label :admin_status, :class => 'control-label' %>：
+      <%= f.select :admin_status,options_admin_status_for_select(@user)%>
+    </p>
+    <p class="short03">
+      <%= f.label :team_id, :class => 'control-fan' %>：
+      <%= f.select(:team_id,team_options_for_select )%>
+    </select>
+    </p>
+    <p class="short02">
+      <%= f.label :assigned_user, :class => 'control-fan' %>：
+      <%= f.select(:assigned_user, user_options_for_select) %>
+    </p>
+    <p class="short2">
+      <%= f.label :mobile_phone, :class => 'control-label' %>:
+      <%= f.text_field :mobile_phone, :class => 'user04' %>
+    </p>
+    <p class="short2">
+      <%= f.label :phone, :class => 'control-label' %>:
+      <%= f.text_field :phone, :class => 'user04' %>
+    </p>
+    <p  class="short3">
+      <span>
+        <%= f.label :desc, :class => 'control-label' %>：
+      </span>
+      <%= f.text_area :desc, :class => 'user005' %>
+    </p>
+    <div class="new_btn">
+      <%= f.submit nil, :class => 'btn02' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  users_path, :class => 'btn02' %>
+      <%= link_to "Change your password", edit_user_registration_path %>
+    </div>
+  </div>
+<% end %>

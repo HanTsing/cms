@@ -1,0 +1,69 @@
+<div class="content">
+  <div class="cont_top">
+    <div class="btn01">
+      <a href="indext.html">首页 </a> <span> ></span>
+      <a href="message.html">用户</a>  <span> ></span>
+      用户信息详情
+    </div>
+    <%= render :partial => 'share/right_nav' %>
+    </div>
+  <div class="cont_right_02">
+    <div class="top">
+      <div class="top_left"><img src="<%= static_url("images/man.png")%>" width="80" height="80" /></div>
+      <div class="top_middle">
+        <h1><img src="<%= static_url("images/see.png")%>" width="20" height="20" /><%= @user.name%></h1>
+        <p class="top_text01">中国著名企业家，阿里巴巴集团、淘宝网、支付宝创始人。
+          首位登上《福布斯》杂志封面人物的大陆企业家，曾当选世
+          界经济论坛未来领袖。
+        </p>
+      </div>
+    </div>
+    <div class="bgcolor"></div>
+    <div  class="social">
+      <div class="social_top">
+        <h3>用户名:</h3><p><%= @user.name%></p>
+      </div>
+      <div class="social_left01">
+        <h3>描述:</h3><p><%= @user.desc%></p>
+      </div>
+      <div class="social_right01">
+        <h3>手机:</h3><p><%= @user.mobile_phone%></p>
+      </div>
+      <div class="social_left01">
+        <h3>电话:</h3><p><%= @user.phone%></p>
+      </div>
+      <div class="social_right01">
+        <h3>创建人:</h3><p><%= @user.created_by%></p>
+      </div>
+      <div class="social_left01">
+        <h3>是否是管理员: </h3><p><%= display_admin_status(@user)%></p>
+      </div>
+      <div class="social_right01">
+        <h3>分配的团队: </h3><p><%= @user.team.try(:name)%></p>
+      </div>
+      <div class="social_left01">
+        <h3>负责人: </h3><p><%= @user.user_assigned_user.try(:name)%></p>
+      </div>
+      <div class="social_right01">
+        <h3>创建时间: </h3><p><%= @user.created_at%></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="new_btn">
+    <%= link_to t('.back',
+                  :default => t("helpers.links.back")),
+                users_path,
+                :class => 'btn02' %>
+    <%= link_to t('.edit',
+                  :default => t('helpers.links.edit')),
+                edit_user_path(@user),
+                :class => 'btn02' %>
+    <%= link_to t('.destroy',
+                  :default => t('helpers.links.destroy')),
+                :method => :delete,
+                :date => { :confirm => t('.confirm', :default => t('helpers.links.confirm')) },
+                :class => 'btn02' %>
+  </div>
+
+</div>

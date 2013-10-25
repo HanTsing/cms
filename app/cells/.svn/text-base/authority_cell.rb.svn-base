@@ -1,0 +1,15 @@
+#encoding: utf-8
+class AuthorityCell < Cell::Rails
+
+  helper AuthenticationsHelper 
+ 
+  def all_role_authorities(args)
+    @all_role_authorities = []
+    @role = args[:role]
+    bms = BusinessModel.all.each do |bm|
+      authorities = Authority.where(model_pinyin: bm.pinyin)
+      @all_role_authorities << [bm.name, authorities]
+    end
+    render
+  end
+end

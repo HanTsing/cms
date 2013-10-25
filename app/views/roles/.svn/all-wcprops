@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/PSCRM/!svn/ver/246/trunk/pscrm/app/views/roles
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/PSCRM/!svn/ver/246/trunk/pscrm/app/views/roles/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/PSCRM/!svn/ver/246/trunk/pscrm/app/views/roles/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/PSCRM/!svn/ver/246/trunk/pscrm/app/views/roles/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/PSCRM/!svn/ver/246/trunk/pscrm/app/views/roles/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/PSCRM/!svn/ver/226/trunk/pscrm/app/views/roles/_form.html.erb
+END

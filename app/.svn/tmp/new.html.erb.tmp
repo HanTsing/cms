@@ -1,0 +1,22 @@
+<%= form_for(resource, :html => {:class => "form-signin"}, :url => session_path(resource_name)) do |f| %>
+  <h2 class="form-signin-heading"><%=t("login_page.welcome")%></h2>
+
+  <%# <%= f.text_field :name, :autofocus => true, :class=>"input-block-level", :placeholder=>"Name" %>
+  <%# <%= f.password_field :password, :class=>"input-block-level", :placeholder=>"Password" %>
+
+<<<<<<< .mine
+=======
+    <%= f.text_field :name, :value => 'admin', :autofocus => true, :class=>"input-block-level", :placeholder=>"Name" %>
+    <%= f.text_field :password, :value => '12345678', :class=>"input-block-level", :placeholder=>"Password" %>
+
+>>>>>>> .r118
+    <%= select_tag "locale", select_language  %>
+
+  <% if devise_mapping.rememberable? -%>
+    <label class="checkbox">
+      <%= f.check_box :remember_me %> Remember me
+    </label>
+
+    <% end -%>
+  <%= button_tag "Sign in", :class => "btn btn-large btn-primary" %>
+<% end %>

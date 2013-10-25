@@ -1,0 +1,57 @@
+<div class="row-fluid">
+	<div class="span12">
+		<!-- BEGIN SAMPLE TABLE PORTLET-->
+		<div class="portlet box blue">
+			<div class="portlet-title">
+				<div class="caption"><i class="icon-cogs"></i>Sample Form</div>
+			</div>
+			<div class="portlet-body form">
+				<!-- BEGIN FORM-->
+        <%= form_for @role, :html => { :class => 'form-horizontal' } do |f| %>
+					<div class="control-group">
+            <%= f.label :name, :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_field :name, :class => 'text_field' %>
+							<span class="help-inline">Some hint here</span>
+            </div>
+					</div>
+					<div class="control-group">
+            <%= f.label :desc, :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_field :desc, :class => 'text_field' %>
+							<span class="help-inline">Some hint here</span>
+            </div>
+					</div>
+
+                  <div class="control-group">
+                    <%= f.label :team_id, :class => 'control-fan' %>
+                    <div class="controls">
+                      <%= f.select(:team_id,
+                                   team_options_for_select,
+                                   :include_blank => t(:unassigned)) %>
+                      <span class="help-inline">Some hint here</span>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <%= f.label :assigned_user, :class => 'control-fan' %>
+                    <div class="controls">
+                      <%= f.select(:assigned_user,
+                                   user_options_for_select,
+                                   :include_blank => t(:unassigned)) %>
+                      <span class="help-inline">Some hint here</span>
+                    </div>
+                  </div>
+          <div class="form-actions">
+            <%= f.submit nil, :class => 'btn btn-primary' %>
+            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              labels_path, :class => 'btn' %>
+            </div>
+             <%= render_cell :authority, :all_role_authorities, :role => @role %>
+        <% end %>
+				<!-- END FORM-->  
+			</div>
+		</div>
+		<!-- END SAMPLE TABLE PORTLET-->
+	</div>
+</div>

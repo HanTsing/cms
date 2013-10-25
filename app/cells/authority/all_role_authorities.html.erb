@@ -1,0 +1,11 @@
+<table class="table">
+  <tbody>
+    <% @authorities.each do |authority| %>
+      <tr>
+        <td> <%= authority.name %>
+          <%= check_box_tag "role[authority_ids][]", authority.id, @role.authorities.include?(authority) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

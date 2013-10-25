@@ -1,0 +1,15 @@
+<style type="text/css">
+  .container{ width:100%;}
+</style>
+
+
+<table class="table table-striped">
+  <tbody>
+    <% if current_user.blank? %>
+      <%= render_cell :post, :not_member_posts%>
+    <% else %>
+      <%= render_cell :post, :all_posts %>
+    <% end %>
+
+  </tbody>
+</table>

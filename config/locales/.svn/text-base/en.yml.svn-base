@@ -1,0 +1,21 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  login_page:
+    welcome: "welocome to Huntor"
+  hello: "Hello world"
+  home: "home"
+  contact: "contact"
+  message: "message" 
+  content: "content"
+  deal:    "deal"
+  activity: "activity"
+  knowledge: "knowledage"
+  customer:  "customer"
+  welcome: "welcome"
+  logout: "logout"
+  login: "login"
+  register: "register"
+  system_admin: "ststem admin"
+  tasking: "tasking"

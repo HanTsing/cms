@@ -1,0 +1,12 @@
+<div class="content">
+  <div class="cont_top">
+    <div class="btn01">
+      <a href="indext.html">首页 </a> <span> &gt;</span>
+      <a href="message.html">用户</a>  <span> &gt;</span>
+      编辑
+    </div>
+    <%= render :partial => "share/right_nav"%>
+  </div>
+
+  <%= render :partial => 'form' %>
+</div>

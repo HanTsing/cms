@@ -1,0 +1,14 @@
+<style type="text/css">
+  .portlet.box.blue {
+    border: 1px solid #4b8df8;
+    border-top: 0;
+  }
+  .btn.blue {
+    color: white;
+    text-shadow: none;
+    background-color: #4d90fe;
+  }
+</style>
+<%- model_class = Role -%>
+<%= render :partial => "/share/breadcrumb", :locals => { model_class: model_class }%>
+<%= render :partial => 'form' %>

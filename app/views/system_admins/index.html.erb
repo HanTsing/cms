@@ -1,0 +1,29 @@
+<style type="text/css">
+  .system {
+    padding:10px;
+    width:80%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #fff;
+  }
+  .system ul {  width:99%; margin:0; border:2px solid #ccc; overflow:hidden; }
+  .system li { list-style:none; float:left; width:25%; height:30px;
+               text-align:center; line-height: 30px; margin-bottom:5px; }
+  .admin_tool { background-color: #f0f0f0; }
+</style>
+<div class="system">
+  <div>
+    <h5>系统管理</h5>
+    <ul>
+      <li class="admin_tool"><a href="<%= posts_path%>" >帖子管理</a></li>
+      <li>管理用户账号和密码</li>
+      <li class="admin_tool"><a href="<%= users_path%>" >用户管理</a></li>
+      <li>管理用户账号和密码</li>
+      <li class="admin_tool"><a href="<%= roles_path%>" >角色管理</a></li>
+      <li>角色管理</li>
+    </ul>
+  </div>
+</div>

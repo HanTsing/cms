@@ -1,0 +1,3 @@
+<%- model_class = Role -%>
+<%= render :partial => "/share/breadcrumb", :locals => { model_class: model_class }%>
+<%= render :partial => 'form' %>

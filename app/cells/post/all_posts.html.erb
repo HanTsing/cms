@@ -1,0 +1,7 @@
+<% @posts && @posts.each do |post| %>
+  <tr>
+    <td><a href="<%= post_path(post) %>"><%= post.title %></a></td>
+    <td><%= post.content %></td>
+    <td><%= post.created_at.to_s(:db) %></td>
+  </tr>
+<% end %>

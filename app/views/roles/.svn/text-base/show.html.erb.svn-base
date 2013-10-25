@@ -1,0 +1,25 @@
+<%- model_class = Role -%>
+<%= render :partial => "/share/breadcrumb", :locals => { model_class: model_class }%>
+
+<dl class="dl-horizontal">
+  <dt><strong>xx:</strong></dt>
+  <dt><strong>xx:</strong></dt>
+  <dt><strong>分配的团队:</strong></dt>
+  <dt><strong>负责人:</strong></dt>
+  <dd><%= @role.name %></dd>
+  <dd><%= @role.desc %></dd>
+  <dd><%= @role.team.name %></dd>
+  <dd><%= @role.user_assigned_user.try(:name) %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              roles_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_role_path(@role), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              role_path(@role),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

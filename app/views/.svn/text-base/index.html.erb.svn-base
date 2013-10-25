@@ -1,0 +1,70 @@
+<div class="content">
+  <div class="cont_top">
+    <div class="btn">
+      <%= link_to new_user_path, class: 'tianjia' do %>
+          <%= image_tag "tianjia.png", width: "11", height: "14" %>
+          <p><%= t('new_user') %></p>
+      <% end %>
+    </div>
+    <%= render :partial => 'share/right_nav' %>
+  </div>
+  <div class="cont_left">
+    <div class="fond">
+      <h3>查找联系人</h3>
+      <div class="important">关键字:
+        <input name="" type="text"  class="input"/>
+      </div>
+      <p class="duocai"></p>
+      <div class="photo"><a href="#"><img src="images/btn.png" width="66" height="25" /></a></div>
+    </div>
+    <div class="list">
+      <h3>分类列表</h3>
+      <p >体育：<br />
+        <span class="sport">足球</span><br />
+        <span class="sport">篮球</span><br />
+      </p>
+      <p>音像发烧友：<br />
+        <span class="music">古典</span><br />
+        <span class="music">流行</span><br />
+        <span class="music">红歌</span></p>
+    </div>
+    <div class="xiangmu">
+      <h3>最近项目</h3>
+    </div>
+  </div>
+  <div class="cont_right">
+    <div class="all">
+      <form id="form001" name="form1" method="post" action="">
+        <p>
+          <label>
+            <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1_0" />
+          </label>
+        </p>
+      </form>
+    </div>
+    <div class="information_02">
+      <% @users.each do |user| %>
+          <div class="new_list">
+            <form id="form2" name="form1" method="post" action="">
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup2_0" />
+              </label>
+            </form>
+            <div class='info_action'>
+              <%= link_to image_tag("pencil.png"), edit_user_path(user) %>
+              <%= link_to image_tag("shanchu-01.png"), user, confirm: "Are you sure?", method: :delete %>
+            </div>
+            <p class="info02_text">
+              <span class="text_01"><%= link_to user.name, user_path(user) %></span>
+              <span class="text_01"><%= user.team.try(:name) %></span>
+              <span class="text_02"><%= user.desc.truncate(20, :omission => "...") %></span>
+              <span class="text_03"><%= display_admin_status(user) %></span>
+            </p>
+          </div>
+      <% end %>
+    </div>
+    <ul class="page">
+      <%= paginate(@users) -%>
+    </ul>
+  </div>
+</div>
